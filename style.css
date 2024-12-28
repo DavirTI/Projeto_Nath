@@ -1,0 +1,132 @@
+/* Estilos gerais */
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+  }
+  
+  /* Fundo com bolhas flutuantes */
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  .bubble {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: float 10s infinite;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(100vh) translateX(0);
+    }
+    100% {
+      transform: translateY(-100vh) translateX(calc(100vw * (rand - 0.5)));
+    }
+  }
+  
+  .bubble:nth-child(1) { left: 20%; animation-duration: 12s; animation-delay: 0s; }
+  .bubble:nth-child(2) { left: 40%; animation-duration: 10s; animation-delay: 2s; }
+  .bubble:nth-child(3) { left: 60%; animation-duration: 14s; animation-delay: 4s; }
+  .bubble:nth-child(4) { left: 80%; animation-duration: 11s; animation-delay: 6s; }
+  .bubble:nth-child(5) { left: 50%; animation-duration: 13s; animation-delay: 8s; }
+  
+  /* Nome com efeito 3D */
+  .name-3d {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px #ff1493, -1px -1px 2px #ff69b4;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+  
+  /* Botão */
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff69b4;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:hover {
+    background-color: #ff1493;
+  }
+  
+  /* Mensagem secreta */
+  .mensagem-secreta {
+    display: none;
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    animation: fadeInZoom 1s ease-out forwards, glow 1.5s infinite alternate;
+    text-shadow: 0 0 10px #ff1493, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+  }
+  
+  /* Créditos */
+  .credits {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .credits a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .credits a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Animação de entrada e brilho */
+  @keyframes fadeInZoom {
+    from {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #ff1493, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+    }
+    to {
+      text-shadow: 0 0 20px #ff1493, 0 0 30px #ff69b4, 0 0 40px #ff69b4;
+    }
+  }
+  
